@@ -14,7 +14,7 @@
             <Entry x:Name="txt_descrição"/>
 
             <Label Text="Quantidade: "/>
-            <Entry Text="txt_quantidade"/>
+            <Entry x:Name="txt_quantidade"/>
 
             <Label Text="Preço"/>
             <Entry x:Name="txt_preco"/>

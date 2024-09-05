@@ -8,7 +8,7 @@ using SQLite;
 
 namespace ComprasApp.Helpers
 {
-    internal class SQLiteDatabaseHelper
+    public class SQLiteDatabaseHelper
     {
         readonly SQLiteAsyncConnection _conn;
 
@@ -46,7 +46,7 @@ namespace ComprasApp.Helpers
 
         public Task<List<Produto>> Search(string q)
         {
-            string sql = "SELECT * FROM Produto WHERE Descricao LIKE '%'" + q + "%'";
+            string sql = "SELECT * FROM Produto WHERE Descricao LIKE '%" + q + "%'";
 
             return _conn.QueryAsync<Produto>(sql);
         }
