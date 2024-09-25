@@ -9,16 +9,16 @@ public partial class NovoProduto : ContentPage
 		InitializeComponent();
 	}
 
-    private async void ToolbarItem_Clicked(object sender, EventArgs e)
+    private async void ToolbarItem_Clicked(object sender, EventArgs e) // Função para adionar um novo produto
     {
 		try
 		{
 			Produto p = new Produto
 			{
 				Descricao = txt_descrição.Text,
-				Quantidade = Convert.ToDouble(txt_quantidade.Text),
+				Quantidade = Convert.ToDouble(txt_quantidade.Text), // Convertendo string para double
 				Preco = Convert.ToDouble(txt_preco.Text),
-			};
+			}; // Instanciando um objeto com as informações do XAML
 
 			await App.Database.Insert(p);
 			await DisplayAlert("Sucesso!", "Produto Inserido", "Ok");

@@ -5,7 +5,7 @@
              Title="EditarProduto">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked"/> <!-- Botão de salvar -->
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

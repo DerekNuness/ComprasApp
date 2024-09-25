@@ -4,24 +4,29 @@
              x:Class="ComprasApp.MainPage"
              Title="Minhas Compras">
 
-    <ContentPage.Resources>
+        <!---->
+        <ContentPage.Resources> 
         <Style TargetType="Label">
             <Setter Property="VerticalTextAlignment" Value="Center"/>
             <Setter Property="VerticalOptions" Value="FillAndExpand"/>
         </Style>
     </ContentPage.Resources>
 
+    <!-- Criando o barra de items no topo do app -->
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Somar" Clicked="ToolbarItem_Clicked_Somar"/>
-        <ToolbarItem Text="Adicionar" Clicked="ToolbarItem_Clicked_Add"/>
+        <ToolbarItem Text="Somar" Clicked="ToolbarItem_Clicked_Somar"/> <!-- Botão de somar -->
+        <ToolbarItem Text="Adicionar" Clicked="ToolbarItem_Clicked_Add"/> <!-- Botão de adicionar -->
     </ContentPage.ToolbarItems>
 
+    <!-- Conteudo da página -->
     <ContentPage.Content>
         <StackLayout>
+            <!-- Criando a barra de pesquisa -->
             <SearchBar x:Name="txt_search" Margin="10" Placeholder="Busca de Produto" 
                        TextChanged="txt_search_TextChanged"/>
-            <ListView x:Name="lst_produtos" ItemSelected="lst_produtos_ItemSelected">
+            <ListView x:Name="lst_produtos" ItemSelected="lst_produtos_ItemSelected"> <!-- O conteudo ficará dentro de uma ListView -->
                 <ListView.Header>
+                    <!-- Definindo o grid do header, onde será dividido em 4 colunas, sendo que a primeira coluna tera o triplo de tamanho das outras -->
                     <Grid ColumnDefinitions="3*, *, *, *">
                         <Label Grid.Column="0" Text="Produto" FontAttributes="Bold"/>
                         
@@ -33,11 +38,12 @@
 
                     </Grid>
                 </ListView.Header>
+                <!-- Template para os items da ListView -->
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.ContextActions>
-                                <MenuItem Text="Remover" Clicked="MenuItem_Clicked"/>
+                                <MenuItem Text="Remover" Clicked="MenuItem_Clicked"/> <!-- Criando um botão para remover item -->
                             </ViewCell.ContextActions>
                             <Grid RowDefinitions="Auto" ColumnDefinitions="3*, *, *, *">
                                 <Label Grid.Column="0" Text="{Binding Descricao}"/>
